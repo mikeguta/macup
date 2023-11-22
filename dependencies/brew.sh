@@ -61,9 +61,9 @@ install_brew_packages(){
             print_info "Installing ${package}"
 
             case $1 in
-            ("brew") install_brew $package;;
-        ("cask") install_cask $package;;
-    ("tap") tap_cask $package;;
+                ("brew") install_brew $package;;
+                ("cask") install_cask $package;;
+                ("tap") tap_cask $package;;
     esac
         done
 
