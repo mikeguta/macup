@@ -6,7 +6,8 @@
 
 install_home_brew() {
     if ! [ -x "$(command -v brew)" ]; then
-        curl -fsS 'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
+        # See https://brew.sh/
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         export PATH="/usr/local/bin:$PATH"
 
         print_success "Homebrew installed."
