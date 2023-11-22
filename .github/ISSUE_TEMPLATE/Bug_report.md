@@ -27,4 +27,4 @@ about: Create a report, help us improve
 Operating System: 
 Additional tools:
 
-<img src="https://raw.githubusercontent.com/juliantellez/up/master/assets/up.png" height="200">
+<img src="https://raw.githubusercontent.com/mikeguta/macup/master/assets/up.png" height="200">

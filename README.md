@@ -1,15 +1,10 @@
 <h1 align="center">UP</h1>
 
 <p align="center">
-  <a href="https://github.com/juliantellez/up" target="_blank">
-    <img alt="lambcycle" src="./assets/up.png" width="144">
-  </a>
-</p>
-
-<p align="center">
-UP is a declarative dotfile configuration.
+MacUp is a declarative dotfile configuration forked from the original 
+<a href="https://github.com/juliantellez/up" target="_blank">UP project</a> created by <a href="https://github.com/juliantellez" target="_blank">Julian Tellez</a>.
 Its main goal is to increase your productivity whilst keeping track of your dependencies.
-Get UP and running in no time, start up your machine with one command!
+Get your MAC UP and running in no time, start up your machine with one command!
 </p>
 
 - [Install](#install)
@@ -34,7 +29,7 @@ Get UP and running in no time, start up your machine with one command!
 # Install
 
 <p align="center">
-  <a href="https://github.com/juliantellez/up" target="_blank">
+  <a href="https://github.com/mikeguta/macup" target="_blank">
     <img alt="lambcycle" src="./assets/up_cli.png" width="500">
   </a>
 </p>
@@ -42,14 +37,16 @@ Get UP and running in no time, start up your machine with one command!
 Copy the following snippet into your current terminal.
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/juliantellez/up/master/install.sh)"
+# TODO: update this
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeguta/macup/master/install.sh)"
 ```
 
 # Tooling
 
-- [Xcode](https://developer.apple.com/xcode/): Installs necessary development tools.
-- [Home brew](https://brew.sh/): The missing package manager for macOS (or Linux).
-- [git](https://github.com/git/git): A free and open source distributed version control system.
+- [Xcode](https://developer.apple.com/xcode/): Installs necessary Command Line development tools.
+- [Homebrew](https://brew.sh/): The missing package manager for macOS (or Linux).
+- [git](https://github.com/git/git): A free and open source distributed version control system (included in XCode CL Tools)
+- [gh](https://cli.github.com/): GitHub CLI brings GitHub to your terminal. Free and open source.
 
 # Shell
 - [ohmyz](https://ohmyz.sh/): A delightful, open source, community-driven framework for managing your ZSH configuration.
@@ -143,7 +140,7 @@ Iterm2 >
 ```
 
 <p align="center">
-  <a href="https://github.com/juliantellez/up" target="_blank">
+  <a href="https://github.com/mikeguta/macup" target="_blank">
     <img alt="lambcycle" src="./assets/up_iterm_config.gif" width="500">
   </a>
 </p>

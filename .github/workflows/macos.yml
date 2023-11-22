@@ -15,7 +15,7 @@ jobs:
           mkdir -p ~/.up; cd ~/.up;
       - name: Fetch Commit
         run: |
-          curl -L "https://github.com/juliantellez/up/tarball/${GITHUB_SHA}" | tar -xzv --strip-components 1 &> /dev/null;
+          curl -L "https://github.com/mikeguta/macup/tarball/${GITHUB_SHA}" | tar -xzv --strip-components 1 &> /dev/null;
       - name: Install and Run UP
         run: |
           # Setup Test env
