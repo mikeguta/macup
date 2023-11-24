@@ -58,8 +58,6 @@ install_brew_packages(){
 
     if [ -e $2 ]; then
         for package in $(<$2); do
-            print_info "Installing ${package}"
-
             case $1 in
                 ("brew") install_brew $package;;
                 ("cask") install_cask $package;;
