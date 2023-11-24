@@ -1,14 +1,15 @@
 #!/bin/bash
 
 . $(pwd)/dependencies/brew.sh
-. $(pwd)/dependencies/fzf.sh
+. $(pwd)/dependencies/browsers.sh
+. $(pwd)/dependencies/containers.sh
+. $(pwd)/dependencies/comms.sh
 . $(pwd)/dependencies/git.sh
 . $(pwd)/dependencies/mac.sh
 . $(pwd)/dependencies/iterm2.sh
 . $(pwd)/dependencies/nodejs.sh
-. $(pwd)/dependencies/nvim.sh
 . $(pwd)/dependencies/zsh/autocomplete.sh
-. $(pwd)/dependencies/zsh/powerlevel9k.sh
+. $(pwd)/dependencies/zsh/powerlevel10k.sh
 . $(pwd)/dependencies/zsh/syntax_highlight.sh
 . $(pwd)/dependencies/xcode.sh
 . $(pwd)/dependencies/zsh.sh
@@ -23,8 +24,8 @@ steps(){
     step "Check: Internet connection"
     test_internet_connection
 
-    step "Setup: XCode"
-    install_xcode
+    step "Setup: XCode Command Line Tools"
+    install_xcode_clt
 
     step "Install: HomeBrew"
     install_home_brew
@@ -38,9 +39,6 @@ steps(){
     step "Install: Casks"
     install_brew_packages "cask" $(pwd)/packages/casks.txt
 
-    step "Install: FZF fuzzy search"
-    install_fzf
-
     step "Install: Nodejs"
     install_nodejs
 
@@ -48,33 +46,38 @@ steps(){
     install_zsh
 
     step "Install: Zsh plugins"
-    install_powerlevel9k
+    install_powerlevel10k
     install_syntax_highlight
     install_autocomplete
+    
+    step "Install: Container Support"
+    install_containers
 
-    step "Config git"
-    configure_git $(pwd)/config/.gitconfig $(pwd)/config/.gitignore_global
+    step "Install: Browsers"
+    install_browsers
+
+    step "Install: Communication Apps"
+    install_communication_apps
+
+    step "Configure GIT"
+    configure_git
 
     step "Setup: SSH key"
     setup_ssh_key
 
-    step "Config: Create Iterm2 configuration"
-    create_iterm2_configuration $(pwd)/config/iterm.json
+    # step "Config: Create Iterm2 configuration"
+    # create_iterm2_configuration $(pwd)/config/iterm.json
 
-    step "Config: Fetch iterm2 color presets"
-    fetch_iterm2_color_preset Ciapre.itermcolors
-    fetch_iterm2_color_preset FrontEndDelight.itermcolors
-    fetch_iterm2_color_preset BirdsOfParadise.itermcolors
+    # step "Config: Fetch iterm2 color presets"
+    # fetch_iterm2_color_preset Ciapre.itermcolors
+    # fetch_iterm2_color_preset FrontEndDelight.itermcolors
+    # fetch_iterm2_color_preset BirdsOfParadise.itermcolors
 
-    step "Config: Copy zshrc"
-    copy_zsh_configuration $(pwd)/config/.zshrc
-
-    step "Config: nvim"
-    install_vim_plug
-    copy_vim_plug_configuration $(pwd)/config/nvim/init.vim
-
-    step "Config: mac"
-    configure_mac
+    step "Config: ZSH Plugins"
+    configure_zsh
+    
+    # step "Config: mac"
+    # configure_mac
 }
 
 main() {
