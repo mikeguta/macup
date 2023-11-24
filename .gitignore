@@ -1,2 +1,4 @@
 color_presets/*
 .backups/*
+# macOS custom attributes
+.DS_Store
