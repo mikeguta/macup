@@ -131,17 +131,6 @@ follow the description below and import them from the color_presets folder.
 Iterm2 > Preferences > Profiles > Colors > Color Presets > Import
 ```
 
-# NeoVim
-
-Neovim plugins are powered by [vim Plug](https://github.com/junegunn/vim-plug).
-
-```
-$ nvim
-
-:PlugStatus
-:PlugInstall
-```
-
 # Acknowledgements
 These configs and dotfiles stand on the shoulders of the following giants:
 
