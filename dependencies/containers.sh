@@ -9,7 +9,9 @@
 install_containers(){
     if ask "Would you like to install container support (docker + colima)?" Y; then
         install_brew docker
+        install_brew docker-compose
         install_brew colima
+        install_brew terraform
         # Make colima start at login
         brew services start colima
 
