@@ -11,7 +11,6 @@ install_containers(){
         install_brew docker
         install_brew docker-compose
         install_brew colima
-        install_brew terraform
         # Make colima start at login
         brew services start colima
 
