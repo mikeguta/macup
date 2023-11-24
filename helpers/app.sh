@@ -9,5 +9,5 @@ is_app_installed() {
     fi
 
     local app_name="$1.app"
-    mdfind -onlyin /Applications "kMDItemKind == 'Application'" | grep "/$app_name$" > /dev/null
+    mdfind -onlyin /Applications "kMDItemKind == 'Application'" | grep -i "/$app_name$" > /dev/null
 }
