@@ -8,7 +8,8 @@ install_zsh () {
     local dir=$HOME/.oh-my-zsh
 
     if ! [[ -d $dir ]]; then
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        # Disable running ZSH after installation
+        RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         print_success "Oh my Zsh installed"
     else
         print_success "Oh my Zsh already installed."
