@@ -67,7 +67,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeguta/macup/master/inst
 - [docker-compose](https://docs.docker.com/compose/reference/): Define and run multi-container applications with Docker.
 - [mas](https://github.com/mas-cli/mas): CLI for the Mac App Store.
 - [terraform](https://github.com/hashicorp/terraform): Tool for building, changing, and versioning infrastructure safely and efficiently.
-- [vault](https://github.com/hashicorp/vault): Tool for securely accessing secrets.
 - [ngrok](https://ngrok.com/): A multiplatform tunnelling and reverse proxy.
 - [vagrant](https://www.vagrantup.com/): Development Environments Made Easy.
 
@@ -81,7 +80,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeguta/macup/master/inst
 # Productivity
 - [spectacle](https://www.spectacleapp.com/): Move and resize windows with ease.
 - [trailer](https://ptsochantaris.github.io/trailer/): Track pull requests and issues across repositories.
-- [day-o](https://shauninman.com/archive/2011/10/20/day_o_mac_menu_bar_clock): Menu bar clock replacement with a simple calendar for your Mac.
 
 # Communication (optional)
 - [slack](https://slack.com/): Brings all your communication together.

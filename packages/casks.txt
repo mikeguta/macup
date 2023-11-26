@@ -1,7 +1,6 @@
 font-fira-code
 font-hack-nerd-font
 font-jetbrains-mono
-day-o
 iterm2
 ngrok
 spectacle

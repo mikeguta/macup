@@ -9,5 +9,4 @@ mas
 terraform
 tree
 the_silver_searcher
-vault
 z
