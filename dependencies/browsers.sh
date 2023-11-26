@@ -21,10 +21,10 @@ install_browsers(){
     fi
 
     if ask "Would you like to install browsers (chrome + firefox)?" Y; then
-        if [! $chrome_installed ]; then
+        if [ ! $chrome_installed ]; then
             install_cask "google-chrome"
         fi
-        if [! $firefox_installed ]; then
+        if [ ! $firefox_installed ]; then
             install_cask "firefox"
         fi
         print_success "Browsers: Chrome, Firefox"

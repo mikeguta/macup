@@ -27,16 +27,16 @@ install_communication_apps(){
     fi
 
     if ask "Would you like to install comm tools Slack / Teams / Zoom / Spotify?" Y; then
-        if [! $slack_is_installed ]; then
+        if [ ! $slack_is_installed ]; then
             install_cask "slack"
         fi
-        if [! $zoom_is_installed ]; then
+        if [ ! $zoom_is_installed ]; then
             install_cask "zoom"
         fi
-        if [! $teams_is_installed ]; then
+        if [ ! $teams_is_installed ]; then
             install_cask "microsoft-teams"
         fi
-        if [! $spotify_is_installed ]; then
+        if [ ! $spotify_is_installed ]; then
             install_cask "spotify"
         fi
         print_success "Communication: slack, teams, zoom, spotify"
