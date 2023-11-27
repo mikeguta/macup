@@ -21,4 +21,4 @@
 
 <img src="https://raw.githubusercontent.com/mikeguta/macup/master/assets/up.png" height="200">
 
-@juliantellez
+@mikeguta
