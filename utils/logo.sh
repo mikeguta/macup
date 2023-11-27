@@ -4,24 +4,14 @@
 . $(pwd)/utils/styles.sh
 
 logo() {
+logo_file_content=`cat $(pwd)/utils/logo.txt`
+
 printf "
 ${color_yellow}
-╭───────────────────────────────────────────────────╮
-|                                                   |
-|                 ██╗   ██╗██████╗                  |
-|                 ██║   ██║██╔══██╗                 |
-|                 ██║   ██║██████╔╝                 |
-|                 ██║   ██║██╔═══╝                  |
-|                 ╚██████╔╝██║                      |
-|                 ╚═════╝ ╚═╝                       |
-|                                                   |
-╰───────────────────────────────────────────────────╯
-                   ...in no time
-
-        Install dependencies with little effort.
-           https://github.com/juliantellez/up
+$logo_file_content
 
 Version: ${UP_VERSION}
 ${font_reset}
 "
 }
+

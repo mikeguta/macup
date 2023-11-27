@@ -6,7 +6,8 @@
 
 install_home_brew() {
     if ! [ -x "$(command -v brew)" ]; then
-        curl -fsS 'https://raw.githubusercontent.com/Homebrew/install/master/install' | ruby
+        # See https://brew.sh/
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         export PATH="/usr/local/bin:$PATH"
 
         print_success "Homebrew installed."
@@ -22,7 +23,7 @@ install_home_brew() {
 }
 
 install_brew() {
-    if [[ ! $(brew list | grep $1) ]]; then
+    if [[ ! $(brew list -1 | grep "^$1$") ]]; then
         print_info "Installing $1"
         brew install $1 >/dev/null
         print_success "${font_bold} ✓ installed. ${font_normal}"
@@ -32,7 +33,7 @@ install_brew() {
 }
 
 install_cask() {
-    if [[ ! $(brew list --cask | grep $1) ]]; then
+    if [[ ! $(brew list --cask -1 | grep "^$1$") ]]; then
         print_info "Installing $1"
         brew install --cask $1 --appdir=/Applications >/dev/null
         print_success "${bold} ✓ installed. $1 ${normal}"
@@ -42,7 +43,7 @@ install_cask() {
 }
 
 tap_cask() {
-    if [[ ! $(brew list --cask| grep $1) ]]; then
+    if [[ ! $(brew list --cask -1 | grep "^$1$") ]]; then
         print_info "Tapping cask $1"
         brew tap $1 >/dev/null
         print_success "${bold} ✓ tapped. ${normal}"
@@ -57,12 +58,10 @@ install_brew_packages(){
 
     if [ -e $2 ]; then
         for package in $(<$2); do
-            print_info "Installing ${package}"
-
             case $1 in
-            ("brew") install_brew $package;;
-        ("cask") install_cask $package;;
-    ("tap") tap_cask $package;;
+                ("brew") install_brew $package;;
+                ("cask") install_cask $package;;
+                ("tap") tap_cask $package;;
     esac
         done
 

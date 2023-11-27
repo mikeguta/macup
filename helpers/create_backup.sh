@@ -16,14 +16,12 @@ create_backup() {
     local backup_file="${timestamp}.${file_name}.bp"
     local backup_file_path=$(pwd)/.backups/${name_space}/${backup_file}
 
-    print_info "Creating backup: ${file_path}"
-
-    mkdir -p $(pwd)/.backups/${name_space}
-
     if [[ -f $file_path ]]; then
+        print_info "Creating backup: ${file_path}"
+        mkdir -p $(pwd)/.backups/${name_space}
         cp "${file_path}" "${backup_file_path}"
-        else
-        print_error "File does not exits: ${file_path}"
+    else
+        print_info "File ${file_path} does not exist, skipped backup"
     fi
 
     if [[ -f $backup_file_path ]]; then

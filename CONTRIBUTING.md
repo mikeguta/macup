@@ -7,7 +7,7 @@ work is not in vain.
 
 ## Issues
 
-**If you have discovered a bug or have a feature suggestion, please [create an issue on GitHub](https://github.com/juliantellez/up/issues/new).**
+**If you have discovered a bug or have a feature suggestion, please [create an issue on GitHub](https://github.com/mikeguta/macup/issues/new).**
 
 
 ## Contributing to the ecosystem
