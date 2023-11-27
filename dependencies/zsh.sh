@@ -27,13 +27,13 @@ configure_zsh () {
     fi
     
     # Plugins are already defined, ask for overwrite
-    if [ grep -q "^plugins=(" "$zsh_config" ]; then
+    if grep -q "^plugins=(" "$zsh_config"; then
         if ask "Would you like to overwrite plugins in your $zsh_config file?" Y; then
             overwrite_zsh_plugins "$zsh_config" "$default_plugins"
             print_success "ZSH: Plugins set to $default_plugins"
         fi
     # Plugins are already defined, ask for overwrite
-    elif [ grep -q "^export ZSH=" "$zsh_config" ]; then
+    elif grep -q "^export ZSH=" "$zsh_config"; then
         append_zsh_plugins "$zsh_config" "$default_plugins"
         print_success "ZSH: Plugins set to $default_plugins"
     else
