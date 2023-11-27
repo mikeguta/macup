@@ -1,4 +1,4 @@
-<h1 align="center">UP</h1>
+<h1 align="center">MacUp</h1>
 
 <p align="center">
 MacUp is a declarative dotfile configuration forked from the original 
