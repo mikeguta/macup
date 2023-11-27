@@ -17,42 +17,22 @@ install_zsh () {
 }
 
 configure_zsh () {
-    # By default, ZSH doesn't enable any plugins
-    # We want to initialize it to a good set of plugins
-    local zsh_config=$HOME/.zshrc
-    local default_plugins="git docker docker-compose node npm zsh-syntax-highlighting zsh-completions"
 
-    if [ ! -f "$zsh_config" ]; then
-        touch "$zsh_config"
+    local zsh_config=$HOME/.zshrc
+    local p10k_config=$HOME/.p10k.zsh
+    local source_zsh_config=$1
+    local source_p10k_config=$2
+
+    if [ -f "$zsh_config" ]; then
+        create_backup "zsh" "zshrc" "$zsh_config"
     fi
     
-    # Plugins are already defined, ask for overwrite
-    if grep -q "^plugins=(" "$zsh_config"; then
-        if ask "Would you like to overwrite plugins in your $zsh_config file?" Y; then
-            overwrite_zsh_plugins "$zsh_config" "$default_plugins"
-            print_success "ZSH: Plugins set to $default_plugins"
-        fi
-    # Plugins are already defined, ask for overwrite
-    elif grep -q "^export ZSH=" "$zsh_config"; then
-        append_zsh_plugins "$zsh_config" "$default_plugins"
-        print_success "ZSH: Plugins set to $default_plugins"
-    else
-        print_error "ZSH: Plugin configuration failed, please add it manually"
+    if [ -f "$p10k_config" ]; then
+        create_backup "zsh" "p10k.zsh" "$p10k_config"
     fi
-}
 
-overwrite_zsh_plugins() {
-    # SED is limited to line-by-line operations
-    # To easily get around it, we replace \n with \r and then reverse the operation
-    cat "$1" | \
-    tr '\n' '\r' | \
-    sed -E "s/\rplugins=\([^\)]*\)/plugins=($2)/g" | \
-    tr '\r' '\n' > "$1"
-}
-
-append_zsh_plugins() {
-    # Use the SED Append command to add the plugins after the line with "export ZSH="
-    cat "$1" | \
-    sed -E "/^export ZSH=.+$/a\ plugins=($2)/g" > "$1"
+    cp "$source_zsh_config" "$zsh_config"
+    cp "$source_p10k_config" "$p10k_config"
+    print_success "Configured ZSH: $zsh_config, $p10k_config"
 }
 

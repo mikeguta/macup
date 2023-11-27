@@ -50,6 +50,9 @@ steps(){
     install_syntax_highlight
     install_autocomplete
     
+    step "Config: ZSH Plugins"
+    configure_zsh $(pwd)/config/.zshrc $(pwd)/config/.p10k.zsh
+
     step "Install: Container Support"
     install_containers
 
@@ -65,19 +68,17 @@ steps(){
     step "Setup: SSH key"
     setup_ssh_key
 
-    # step "Config: Create Iterm2 configuration"
-    # create_iterm2_configuration $(pwd)/config/iterm.json
+    step "Config: Create Iterm2 configuration"
+    create_iterm2_configuration $(pwd)/config/iterm.json
 
-    # step "Config: Fetch iterm2 color presets"
-    # fetch_iterm2_color_preset Ciapre.itermcolors
-    # fetch_iterm2_color_preset FrontEndDelight.itermcolors
-    # fetch_iterm2_color_preset BirdsOfParadise.itermcolors
+    step "Config: Fetch iterm2 color presets"
+    fetch_iterm2_color_preset Ciapre.itermcolors
+    fetch_iterm2_color_preset FrontEndDelight.itermcolors
+    fetch_iterm2_color_preset BirdsOfParadise.itermcolors
 
-    step "Config: ZSH Plugins"
-    configure_zsh
     
-    # step "Config: mac"
-    # configure_mac
+    step "Config: mac"
+    configure_mac
 }
 
 main() {
