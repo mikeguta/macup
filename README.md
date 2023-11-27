@@ -85,7 +85,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeguta/macup/master/inst
 - [slack](https://slack.com/): Brings all your communication together.
 - [zoom](https://www.zoom.us/): Video communication and virtual meeting platform.
 - [microsoft-teams](https://www.microsoft.com/en/microsoft-teams/group-chat-software/): Meet, chat, call, and collaborate in just one place.
-- [spotify](https://www.spotify.com): Music for everyone.
 
 # Configuration files
 

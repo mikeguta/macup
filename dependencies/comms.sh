@@ -17,16 +17,13 @@ install_communication_apps(){
     if is_app_installed "Microsoft Teams.*"; then
         local teams_is_installed=true
     fi
-    if is_app_installed "Spotify"; then
-        local spotify_is_installed=true
-    fi
 
-    if [ $slack_is_installed ] && [ $zoom_is_installed ] && [ $teams_is_installed ] && [ $spotify_is_installed ]; then
+    if [ $slack_is_installed ] && [ $zoom_is_installed ] && [ $teams_is_installed ]; then
         print_info "Comms: all tools are already installed ..."
         return 0;
     fi
 
-    if ask "Would you like to install comm tools Slack / Teams / Zoom / Spotify?" Y; then
+    if ask "Would you like to install comm tools Slack / Teams / Zoom?" Y; then
         if [ ! $slack_is_installed ]; then
             install_cask "slack"
         fi
@@ -36,10 +33,7 @@ install_communication_apps(){
         if [ ! $teams_is_installed ]; then
             install_cask "microsoft-teams"
         fi
-        if [ ! $spotify_is_installed ]; then
-            install_cask "spotify"
-        fi
-        print_success "Communication: slack, teams, zoom, spotify"
+        print_success "Communication: slack, teams, zoom"
 
     else
         print_info "No comms tools chosen"
