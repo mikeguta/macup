@@ -3,7 +3,7 @@
             {
                     "Name": "MacUp config",
                     "Guid": "2c250fcb-696d-4da9-96d2-39208ce8f832",
-                    "Normal Font": "HackNerdFontComplete-Regular 12",
+                    "Normal Font": "HackNFM-Regular 12",
                     "Ansi 0 Color" : {
                         "Green Component" : 0.14426276087760925,
                         "Red Component" : 0.14143691956996918,
