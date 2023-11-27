@@ -24,19 +24,21 @@ Get your MAC UP and running in no time, start up your machine with one command!
 
 # Install
 
-<p align="center">
-  <a href="https://github.com/mikeguta/macup" target="_blank">
-    <img alt="lambcycle" src="./assets/up_cli.png" width="500">
-  </a>
-</p>
-
-Copy the following snippet into your current terminal.
+Copy the following snippet into your current terminal and follow the instructions
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeguta/macup/master/install.sh)"
 ```
 
+<p align="center">
+  <a href="https://github.com/mikeguta/macup" target="_blank">
+    <img alt="MacUp step-by-step wizard" src="./assets/up_cli.png" width="500">
+  </a>
+</p>
+NOTE: After the initial prompt, the majority of dependencies do not require prompts (the first 5-7 minutes). Optional and interactive dependencies are clustered towards the end of the installation (the final 3-5 minutes).
+
 # Base Tools
+*You can't do much without these tools*
 - [Xcode](https://developer.apple.com/xcode/): Installs necessary Command Line Tools.
 - [Homebrew](https://brew.sh/): The missing package manager for macOS (or Linux).
 - [git](https://github.com/git/git): A free and open source distributed version control system (included in XCode CL Tools)
@@ -44,9 +46,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeguta/macup/master/inst
 
 
 # Shell
+*Popular combination of Oh-My-Zsh! + PowerLevel 10k + iTerm2 + Fonts*
 - [ohmyz](https://ohmyz.sh/): A delightful, open source, community-driven framework for managing your ZSH configuration.
 - [iterm2](https://www.iterm2.com/): A replacement for Terminal.
-- [powerlevel10k](https://github.com/romkatv/powerlevel10k): The most awesome Powerline theme for ZSH around!
+- [powerlevel10k](https://github.com/romkatv/powerlevel10k): Popular theme for ZSH.
 - [zsh syntax highlight](https://github.com/zsh-users/zsh-syntax-highlighting): Enables highlighting of commands whilst they are typed.
 - [zsh autocomplete](https://github.com/zsh-users/zsh-completions): Completion scripts that are not available in Zsh yet.
 - [font-hack-nerd-font](https://github.com/ryanoasis/nerd-fonts): Developer targeted fonts (ideal for Terminal).
@@ -54,10 +57,13 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeguta/macup/master/inst
 
 
 # Languages
-- [Nodejs](https://nodejs.org/en/): A JavaScript runtime built on Chrome's V8 JavaScript engine.
+*These are absolute musts IMO for web development*
+- [nvm](https://github.com/nvm-sh/nvm): allows you to quickly install and use different versions of node via the command line.
+- [Nodejs](https://nodejs.org/en/): current LTS version installed by default.
 - [Python](https://github.com/python/cpython): An ideal language for scripting and rapid application development in many areas on most platforms.
 
-# cli/Utilities
+# CLI: Utilities
+*A selection of the most popular CLI utilities for general use*
 - [fzf](https://github.com/junegunn/fzf): General-purpose command-line fuzzy finder.
 - [jq](https://github.com/stedolan/jq): A lightweight and flexible command-line JSON processor.
 - [htop](https://github.com/hishamhm/htop): An interactive process viewer.
@@ -66,7 +72,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeguta/macup/master/inst
 - [wget](https://github.com/jay/wget): A free utility for non-interactive download of files from the Web.
 - [z](https://github.com/rupa/z): Tracks your most used directories, based on 'frecency'.
 
-# cli/Tools
+# CLI: Tools
+*A selection of the most popular CLI tools for Cloud Development (personal preference for AWS)*
 - [awscli](https://github.com/aws/aws-cli): Unified command line interface to Amazon Web Services.
 - [mas](https://github.com/mas-cli/mas): CLI for the Mac App Store.
 - [terraform](https://github.com/hashicorp/terraform): Tool for building, changing, and versioning infrastructure safely and efficiently.
@@ -74,16 +81,19 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeguta/macup/master/inst
 - [vagrant](https://www.vagrantup.com/): Development Environments Made Easy.
 
 # Containers (Optional)
+*A personally favourite combination of CLI & GUI to support container development*
 - [colima](https://github.com/abiosoft/colima): Colima - container runtimes on macOS (and Linux) with minimal setup.
 - [docker](https://github.com/docker/cli): A self-sufficient runtime for containers.
 - [docker-compose](https://docs.docker.com/compose/reference/): Define and run multi-container applications with Docker.
 - [podman-desktop](https://podman-desktop.io/): Free and permissive GUI to manage containers (an alternative to Docker Desktop)
 
 # Browsers (optional)
+*The most popular 3rd party browsers on MacOS*
 - [firefox](https://www.mozilla.org/en-US/firefox/): Free and open-source web browser developed by the Mozilla Foundation.
 - [google-chrome](https://www.google.com/chrome/): A cross-platform web browser developed by Google.
 
 # Editors
+*Favourite IDE for Modern Web Development*
 - [visual-studio-code](https://code.visualstudio.com/): Code editor redefined and optimized for building and debugging modern web and cloud applications. 
 
 # Productivity
@@ -91,16 +101,26 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeguta/macup/master/inst
 - [trailer](https://ptsochantaris.github.io/trailer/): Track pull requests and issues across repositories.
 
 # Communication (optional)
+*The vast majority of organizations will use at least one of these for instant messaging*
 - [slack](https://slack.com/): Brings all your communication together.
 - [zoom](https://www.zoom.us/): Video communication and virtual meeting platform.
 - [microsoft-teams](https://www.microsoft.com/en/microsoft-teams/group-chat-software/): Meet, chat, call, and collaborate in just one place.
 
 # Configuration files
 - [iterm](./config/iterm.json): iTerm2 profile (with Hack Nerd Font and colours)
-- [.p10k.sh](./config/.p10k.sh): PowerLine 10k Configuration (assumes Hack Nerd Font is used).
-- [.zshrc](./config/.zshrc): ZSH config with Oh-My-Zsh!, Powerline10k & other plugins.
+- [.p10k.sh](./config/.p10k.sh): PowerLevel 10k Configuration (assumes Hack Nerd Font is used).
+- [.zshrc](./config/.zshrc): ZSH config with Oh-My-Zsh!, PowerLevel10k & other plugins.
+
+# GIT configuration
+To help with GIT configuration, this package:
+* prompts and sets `user.name` and `user.email` (if not already found in `git config`)
+* generates SSH key pair, if not already there, with a default name (should you wish/need to use SSH)
+* runs `gh auth login` which allows you to authenticate the GIT CLI with GitHub.com via the Web Browser (interactively)
+*Note: you can subseequently authenticate with other hosts by any other means if the above is not suitable.*
 
 # Mac Configuration
+**IMPORTANT:** *This is very optional. I know a lot of devs prefer something like this, but it's a matter of extremely personal taste.*
+
 Please read the [configurations](./dependencies/mac.sh) before applying them. Note that you can always reset them by typing:
 
 ```sh
@@ -125,7 +145,7 @@ Iterm2 >
 
 <p align="center">
   <a href="https://github.com/mikeguta/macup" target="_blank">
-    <img alt="lambcycle" src="./assets/up_iterm_config.gif" width="500">
+    <img alt="iTerm2 set configuration as default" src="./assets/up_iterm_config.gif" width="500">
   </a>
 </p>
 
