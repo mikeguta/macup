@@ -8,11 +8,17 @@ Get your MAC UP and running in no time, start up your machine with one command!
 </p>
 
 - [Install](#install)
-- [Tools](#tools)
+- [Base Tools](#base-tools)
 - [Shell](#shell)
 - [Languages](#languages)
-- [Utilities](#utilities)
-
+- [CLI: Utilities](#cli-utilities)
+- [CLI: Tools](#cli-tools)
+- [Containers](#containers-optional)
+- [Browsers](#browsers-optional)
+- [Editors](#editors)
+- [Productivity](#productivity)
+- [Communication](#communication-optional)
+- [Configuration](#configuration-files)
 - [Acknowledgements](#acknowledgements)
 - [FAQ](#faq)
 
@@ -30,7 +36,7 @@ Copy the following snippet into your current terminal.
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeguta/macup/master/install.sh)"
 ```
 
-# Tools
+# Base Tools
 - [Xcode](https://developer.apple.com/xcode/): Installs necessary Command Line Tools.
 - [Homebrew](https://brew.sh/): The missing package manager for macOS (or Linux).
 - [git](https://github.com/git/git): A free and open source distributed version control system (included in XCode CL Tools)
@@ -43,7 +49,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeguta/macup/master/inst
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k): The most awesome Powerline theme for ZSH around!
 - [zsh syntax highlight](https://github.com/zsh-users/zsh-syntax-highlighting): Enables highlighting of commands whilst they are typed.
 - [zsh autocomplete](https://github.com/zsh-users/zsh-completions): Completion scripts that are not available in Zsh yet.
-- [font-hack-nerd-font](https://github.com/ryanoasis/nerd-fonts): Developer targeted fonts.
+- [font-hack-nerd-font](https://github.com/ryanoasis/nerd-fonts): Developer targeted fonts (ideal for Terminal).
 - [font-jetbrains-mono](https://github.com/JetBrains/JetBrainsMono): JetBrains Mono fonts.
 
 
@@ -51,7 +57,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeguta/macup/master/inst
 - [Nodejs](https://nodejs.org/en/): A JavaScript runtime built on Chrome's V8 JavaScript engine.
 - [Python](https://github.com/python/cpython): An ideal language for scripting and rapid application development in many areas on most platforms.
 
-# Utilities
+# cli/Utilities
 - [fzf](https://github.com/junegunn/fzf): General-purpose command-line fuzzy finder.
 - [jq](https://github.com/stedolan/jq): A lightweight and flexible command-line JSON processor.
 - [htop](https://github.com/hishamhm/htop): An interactive process viewer.
@@ -60,15 +66,18 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeguta/macup/master/inst
 - [wget](https://github.com/jay/wget): A free utility for non-interactive download of files from the Web.
 - [z](https://github.com/rupa/z): Tracks your most used directories, based on 'frecency'.
 
-# cli/Binaries
+# cli/Tools
 - [awscli](https://github.com/aws/aws-cli): Unified command line interface to Amazon Web Services.
-- [colima](https://github.com/abiosoft/colima): Colima - container runtimes on macOS (and Linux) with minimal setup.
-- [docker](https://github.com/docker/cli): A self-sufficient runtime for containers.
-- [docker-compose](https://docs.docker.com/compose/reference/): Define and run multi-container applications with Docker.
 - [mas](https://github.com/mas-cli/mas): CLI for the Mac App Store.
 - [terraform](https://github.com/hashicorp/terraform): Tool for building, changing, and versioning infrastructure safely and efficiently.
 - [ngrok](https://ngrok.com/): A multiplatform tunnelling and reverse proxy.
 - [vagrant](https://www.vagrantup.com/): Development Environments Made Easy.
+
+# Containers (Optional)
+- [colima](https://github.com/abiosoft/colima): Colima - container runtimes on macOS (and Linux) with minimal setup.
+- [docker](https://github.com/docker/cli): A self-sufficient runtime for containers.
+- [docker-compose](https://docs.docker.com/compose/reference/): Define and run multi-container applications with Docker.
+- [podman-desktop](https://podman-desktop.io/): Free and permissive GUI to manage containers (an alternative to Docker Desktop)
 
 # Browsers (optional)
 - [firefox](https://www.mozilla.org/en-US/firefox/): Free and open-source web browser developed by the Mozilla Foundation.
@@ -87,29 +96,30 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/mikeguta/macup/master/inst
 - [microsoft-teams](https://www.microsoft.com/en/microsoft-teams/group-chat-software/): Meet, chat, call, and collaborate in just one place.
 
 # Configuration files
-
-- [iterm](./config/iterm.json): Iterm2 profile.
+- [iterm](./config/iterm.json): iTerm2 profile (with Hack Nerd Font and colours)
+- [.p10k.sh](./config/.p10k.sh): PowerLine 10k Configuration (assumes Hack Nerd Font is used).
+- [.zshrc](./config/.zshrc): ZSH config with Oh-My-Zsh!, Powerline10k & other plugins.
 
 # Mac Configuration
 Please read the [configurations](./dependencies/mac.sh) before applying them. Note that you can always reset them by typing:
 
-```
+```sh
 defaults delete <domain>; # sets domain to default settings
 killall <domain>; # restarts domain
-
-e.g
+```
+For example:
+```sh
 defaults delete Dock;
 kill all Dock;
 ```
 
 # Iterm Profile
-
-UP uses a dynamic profile [see](https://www.iterm2.com/documentation-dynamic-profiles.html). To enable it do:
+MacUp uses a dynamic profile [see](https://www.iterm2.com/documentation-dynamic-profiles.html). To enable it do:
 
 ```
 Iterm2 >
     Preferences >
-        Profiles > UP Config >
+        Profiles > MacUp Config >
             Other Actions > Set as Default
 ```
 
@@ -121,8 +131,7 @@ Iterm2 >
 
 # Color Presets
 
-Color presets can be downloaded by following [this url](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/README.md). Alternatively you can
-follow the description below and import them from the color_presets folder.
+Color presets can be downloaded by following [this url](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/README.md). Alternatively you can follow the description below and import them from the color_presets folder.
 
 ```
 Iterm2 > Preferences > Profiles > Colors > Color Presets > Import
@@ -131,16 +140,15 @@ Iterm2 > Preferences > Profiles > Colors > Color Presets > Import
 # Acknowledgements
 These configs and dotfiles stand on the shoulders of the following giants:
 
+- https://github.com/juliantellez/up
 - https://github.com/minamarkham/formation
 - https://github.com/mathiasbynens/dotfiles
 - https://github.com/kevinSuttle/macOS-Defaults
 
 # FAQ
 
-- Have you tested these dotfiles?
-
-  Yes, currently tested on:
-
+**Q:** Have you tested these dotfiles?
+**A:** Yes, currently tested on:
   - macOS Monterey - 12.7.1
 
 # Footnotes
