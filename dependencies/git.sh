@@ -43,6 +43,8 @@ login_to_github() {
         print_success "Git: already authenticated"
     elif ask "Would you like to login to GitHub?" Y; then
         if gh auth login; then
+            # Making GIT use gh as credentials helper
+            gh auth setup-git
             print_success "GIT: Authenticated"
         else
             print_error "GIT: Failed to authenticate, you should do so manually"
