@@ -5,6 +5,7 @@ BREW_PREFIX=$(brew --prefix)
 plugins=(git docker docker-compose node npm zsh-syntax-highlighting)
 
 source $BREW_PREFIX/share/powerlevel10k/powerlevel10k.zsh-theme
+source $BREW_PREFIX/etc/profile.d/z.sh
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 
