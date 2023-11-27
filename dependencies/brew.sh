@@ -23,7 +23,7 @@ install_home_brew() {
 }
 
 install_brew() {
-    if [[ ! $(brew list | grep $1) ]]; then
+    if [[ ! $(brew list -1 | grep "^$1$") ]]; then
         print_info "Installing $1"
         brew install $1 >/dev/null
         print_success "${font_bold} ✓ installed. ${font_normal}"
@@ -33,7 +33,7 @@ install_brew() {
 }
 
 install_cask() {
-    if [[ ! $(brew list --cask | grep $1) ]]; then
+    if [[ ! $(brew list --cask -1 | grep "^$1$") ]]; then
         print_info "Installing $1"
         brew install --cask $1 --appdir=/Applications >/dev/null
         print_success "${bold} ✓ installed. $1 ${normal}"
@@ -43,7 +43,7 @@ install_cask() {
 }
 
 tap_cask() {
-    if [[ ! $(brew list --cask| grep $1) ]]; then
+    if [[ ! $(brew list --cask -1 | grep "^$1$") ]]; then
         print_info "Tapping cask $1"
         brew tap $1 >/dev/null
         print_success "${bold} ✓ tapped. ${normal}"
