@@ -61,6 +61,6 @@ configure_git(){
         configure_git_colors
         configure_git_user
     else
-        print_error "Aborting..."
+        print_info "skipped git configuration..."
     fi
 }
