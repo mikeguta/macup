@@ -23,7 +23,7 @@ install_communication_apps(){
 
     if [ $slack_is_installed ] && [ $zoom_is_installed ] && [ $teams_is_installed ] && [ $spotify_is_installed ]; then
         print_info "Comms: all tools are already installed ..."
-        exit 0;
+        return 0;
     fi
 
     if ask "Would you like to install comm tools Slack / Teams / Zoom / Spotify?" Y; then

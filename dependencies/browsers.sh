@@ -17,7 +17,7 @@ install_browsers(){
 
     if [ $chrome_installed ] && [ $firefox_installed ]; then
         print_info "Chrome and Firefox browsers already installed ..."
-        exit 0;
+        return 0;
     fi
 
     if ask "Would you like to install browsers (chrome + firefox)?" Y; then
