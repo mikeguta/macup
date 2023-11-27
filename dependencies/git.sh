@@ -42,6 +42,10 @@ login_to_github() {
     if gh auth status; then
         print_success "Git: already authenticated"
     elif ask "Would you like to login to GitHub?" Y; then
+        if [ "${MACUP_ENV}" == "development" ]; then
+            print_info "GIT: Development mode does not authenticate"
+            return 0;
+        fi
         if gh auth login; then
             # Making GIT use gh as credentials helper
             gh auth setup-git

@@ -15,7 +15,7 @@ create_ssh_key() {
 
 setup_ssh_key() {
     # Override for development
-    if [ "${UP_ENV}" = "development" ]; then
+    if [ "${MACUP_ENV}" = "development" ]; then
         return 0;
     fi
 

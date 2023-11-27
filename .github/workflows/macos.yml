@@ -12,7 +12,7 @@ jobs:
           system_profiler SPSoftwareDataType
       - name: Create workspace
         run: |
-          mkdir -p ~/.up; cd ~/.up;
+          mkdir -p ~/.macup; cd ~/.macup;
       - name: Fetch Commit
         run: |
           curl -L "https://github.com/mikeguta/macup/tarball/${GITHUB_SHA}" | tar -xzv --strip-components 1 &> /dev/null;
@@ -21,7 +21,7 @@ jobs:
           # Setup Test env
           defaults write -g AppleLanguages '("en-GB")';
           export TERM=xterm-256color;
-          export UP_ENV="development";
+          export MACUP_ENV="development";
           export GIT_USERNAME="foo"
           export GIT_EMAIL="foo@baz.gizmo"
 

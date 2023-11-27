@@ -8,7 +8,7 @@
 prompt() {
     if ask "MacUp will configure this machine and requires Admin access. Are you sure?" Y; then
         # Override for development
-        if ! [ "${UP_ENV}" = "development" ]; then
+        if ! [ "${MACUP_ENV}" = "development" ]; then
             admin_access
         fi
 
