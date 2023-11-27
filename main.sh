@@ -62,11 +62,12 @@ steps(){
     step "Install: Communication Apps"
     install_communication_apps
 
-    step "Configure GIT"
-    configure_git
-
     step "Setup: SSH key"
     setup_ssh_key
+
+    step "Configure GIT"
+    configure_git
+    login_to_github
 
     step "Config: Create Iterm2 configuration"
     create_iterm2_configuration $(pwd)/config/iterm.json

@@ -38,6 +38,18 @@ configure_git_user() {
     print_success "Git: user, email set"
 }
 
+login_to_github() {
+    if gh auth status; then
+        print_success "Git: already authenticated"
+    elif ask "Would you like to login to GitHub?" Y; then
+        if gh auth login; then
+            print_success "GIT: Authenticated"
+        else
+            print_error "GIT: Failed to authenticate, you should do so manually"
+        fi
+    fi
+}
+
 
 configure_git_colors() {
     git config --global "color.ui" "auto"
