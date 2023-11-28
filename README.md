@@ -97,7 +97,7 @@ NOTE: After the initial prompt, the majority of dependencies do not require prom
 - [visual-studio-code](https://code.visualstudio.com/): Code editor redefined and optimized for building and debugging modern web and cloud applications. 
 
 # Productivity
-- [caffeine](https://www.intelliscapesolutions.com/apps/caffeine): Don't let your Mac fall asleep.
+- [caffeine](https://www.intelliscapesolutions.com/apps/caffeine): Don't let your Mac fall asleep. *Only use in a secure environment, e.g. at home*
 - [rectangle](https://rectangleapp.com/): Move and resize windows in macOS using keyboard shortcuts or snap areas.
 - [trailer](https://ptsochantaris.github.io/trailer/): Track pull requests and issues across repositories.
 *Note: Some apps are no longer supported (e.g. `jiggler` is unsigned, `spectacle` is not maintained)*
