@@ -3,7 +3,8 @@ font-hack-nerd-font
 font-jetbrains-mono
 iterm2
 ngrok
-spectacle
+rectangle
+caffeine
 trailer
 vagrant
 visual-studio-code
