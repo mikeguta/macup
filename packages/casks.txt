@@ -4,6 +4,7 @@ font-jetbrains-mono
 iterm2
 ngrok
 rectangle
+caffeine
 trailer
 vagrant
 visual-studio-code
