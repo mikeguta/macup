@@ -25,7 +25,7 @@ install_home_brew() {
 install_brew() {
     if [[ ! $(brew list -1 | grep "^$1$") ]]; then
         print_info "Installing $1"
-        brew install $1 >/dev/null
+        brew install --require-sha $1 >/dev/null
         print_success "${font_bold} ✓ installed. ${font_normal}"
     else
         print_success "$1 already installed."
@@ -35,7 +35,7 @@ install_brew() {
 install_cask() {
     if [[ ! $(brew list --cask -1 | grep "^$1$") ]]; then
         print_info "Installing $1"
-        brew install --cask $1 --appdir=/Applications >/dev/null
+        brew install --require-sha --cask $1 --appdir=/Applications >/dev/null
         print_success "${bold} ✓ installed. $1 ${normal}"
     else
         print_success "$1 already installed."
